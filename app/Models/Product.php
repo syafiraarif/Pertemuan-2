@@ -6,12 +6,12 @@ use Illuminate\Database\Eloquent\Model;
 
 class Product extends Model
 {
-    public $timestamps = false;
+    public $timestamps = true;
 
     protected $fillable = [
         'user_id',
         'name',
-        'qty',
+        'quantity',
         'price'
     ];
 
