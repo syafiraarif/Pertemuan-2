@@ -26,3 +26,18 @@
 | Halaman Product After Tambah Data | Halaman Tambah Product | Halaman Edit Product | Halaman View one Product |
 |---------|---------|---------|---------|
 | ![5](ss/pertemuan4/setelahMenambahData.png) | ![6](ss/pertemuan4/halamanTambahProduct.png) | ![7](ss/pertemuan4/halamanEditProduct.png) | ![8](ss/pertemuan4/halamanViewProduct.png) |   
+
+
+## Pertemuan 5
+
+| Tambah Role | Database After Tambah Role | Create Gate |
+|---------|------|-----------|
+| ![1](ss/pertemuan5/tambahAtributRole.png) | ![2](ss/pertemuan5/databaseAfterTambahRole.png) | ![3](ss/pertemuan5/membuatGateManageProduct.png) |
+
+| Penerapan Gate View | Penerapan Gate Route | Create Product Policy |
+|---------|------|-----------|
+| ![4](ss/pertemuan5/penerapanGateView.png) | ![5](ss/pertemuan5/penerapanGateRoute.png) | ![6](ss/pertemuan5/membuatProductPolicy.png) |
+
+| Penerapan Product Policy | Tampilan Admin | Tampilan User |
+|---------|------|-----------|
+| ![7](ss/pertemuan5/penerapanProductPolicy.png) | ![8](ss/pertemuan5/tampilanRoleAdmin.png) | ![9](ss/pertemuan5/tampilanRoleUser.png) |
