@@ -41,3 +41,14 @@
 | Penerapan Product Policy | Tampilan Admin | Tampilan User |
 |---------|------|-----------|
 | ![7](ss/pertemuan5/tampilanAdmin1.png) | ![8](ss/pertemuan5/tampilanAdmin2.png) | ![9](ss/pertemuan5/tampilanUser.png) |
+
+
+## Pertemuan 6
+
+| Create Validasi | Validasi diController | Tampilan Validasi Tambah |
+|---------|------|-----------|
+| ![1](ss/pertemuan6/createValidasi.png) | ![2](ss/pertemuan6/penerapanValidasiController.png) | ![3](ss/pertemuan6/validasiTambah.png) |
+
+| Tampilan Validasi Update 1| Tampilan Validasi Update 2 | 
+|---------|------|
+| ![4](ss/pertemuan6/validasiUpdate.png) | ![5](ss/pertemuan6/validasiUpdate1.png) | 
