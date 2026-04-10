@@ -40,4 +40,4 @@
 
 | Penerapan Product Policy | Tampilan Admin | Tampilan User |
 |---------|------|-----------|
-| ![7](ss/pertemuan5/penerapanProductPolicy.png) | ![8](ss/pertemuan5/tampilanRoleAdmin.png) | ![9](ss/pertemuan5/tampilanRoleUser.png) |
+| ![7](ss/pertemuan5/tampilanAdmin1.png) | ![8](ss/pertemuan5/tampilanAdmin2.png) | ![9](ss/pertemuan5/tampilanUser.png) |
