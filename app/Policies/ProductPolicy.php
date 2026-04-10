@@ -13,7 +13,7 @@ class ProductPolicy
      */
     public function viewAny(User $user): bool
     {
-        return false;
+        return true;
     }
 
     /**
@@ -21,7 +21,7 @@ class ProductPolicy
      */
     public function view(User $user, Product $product): bool
     {
-        return false;
+        return true;
     }
 
     /**
@@ -29,7 +29,7 @@ class ProductPolicy
      */
     public function create(User $user): bool
     {
-        return false;
+        return $user->role === 'admin';    
     }
 
     /**
@@ -37,7 +37,7 @@ class ProductPolicy
      */
     public function update(User $user, Product $product): bool
     {
-        return $user->id === $product->user_id; 
+        return $user->role === 'admin' && $user->id === $product->user_id;
     }
 
     /**
@@ -45,10 +45,7 @@ class ProductPolicy
      */
     public function delete(User $user, Product $product): bool
     {
-        if ($user->role === 'admin') {
-            return true;
-        }
-        return $user->id === $product->user_id;
+        return $user->role === 'admin' && $user->id === $product->user_id;
     }
 
     /**
