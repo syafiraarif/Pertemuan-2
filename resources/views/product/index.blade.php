@@ -10,16 +10,9 @@
                             <h2 class="text-2xl font-bold text-gray-800 dark:text-gray-100 tracking-tight">Product List</h2>
                             <p class="text-sm text-gray-500 dark:text-gray-400 mt-1">Manage your product inventory</p>
                         </div>
+                        
                         @can('manage-product')
-                        <a href="{{ route('product.create') }}"
-                        class="inline-flex items-center gap-2 px-4 py-2.5 rounded-lg bg-gray-200 hover:bg-gray-300 dark:bg-gray-600 dark:hover:bg-gray-500 text-gray-800 dark:text-white text-sm font-semibold transition">
-
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4" />
-                            </svg>
-
-                            Add Product
-                        </a>
+                            <x-add-product :url="route('product.create')" name="Product" />
                         @endcan
                     </div>
 
@@ -72,12 +65,10 @@
                                                         <path stroke-linecap="round" stroke-linejoin="round" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
                                                     </svg>
                                                 </a>    
-                                                    {{-- Tombol Edit: Hanya muncul jika User adalah Owner (Admin yang buat) --}}
                                                     @can('update', $product)
                                                         <x-edit-button :url="route('product.edit', $product)" />
                                                     @endcan
 
-                                                    {{-- Tombol Delete: Hanya muncul jika User adalah Owner (Admin yang buat) --}}
                                                     @can('delete', $product)
                                                         <x-delete-button :url="route('product.delete', $product->id)" />
                                                     @endcan

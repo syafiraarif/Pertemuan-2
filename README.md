@@ -52,3 +52,14 @@
 | Tampilan Validasi Update 1| Tampilan Validasi Update 2 | 
 |---------|------|
 | ![4](ss/pertemuan6/validasiUpdate.png) | ![5](ss/pertemuan6/validasiUpdate1.png) | 
+
+
+## Pertemuan 6
+
+| Penerapan Button Add Dng Component Berjalan | Penerapan Update & Delete Dng Component Berjalan |
+|---------|------|-----------|
+| ![1](ss/pertemuan7/penerapanTombolAddProduct.png) | ![2](ss/pertemuan7/penerapanTombolUpdate&Delete.png) |
+
+| Tampilan Button Add | Tampilan Button Update & Delete | 
+|---------|------|
+| ![4](ss/pertemuan7/tampilanButtonTambah.png) | ![5](ss/pertemuan7/tampilanButtonEdit&Delete.png) | 
