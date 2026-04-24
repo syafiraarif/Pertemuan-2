@@ -10,26 +10,27 @@ class KategoriController extends Controller
 {
     public function index()
     {
-        $kategoris = Kategori::with('product')->get();
+        // Gunakan 'products' (jamak) sesuai dengan fungsi di model Kategori
+        $kategoris = Kategori::with('products')->get(); 
+        
         return view('kategori.index', compact('kategoris'));
     }
 
     public function create()
     {
-        $products = Product::all(); // Ambil semua data produk untuk pilihan di form
-        return view('kategori.create', compact('products'));
+        // Hapus pengambilan data produk, karena kita hanya buat nama kategori
+        return view('kategori.create');
     }
 
     public function store(Request $request)
     {
+        // Cukup validasi 'name' saja, karena kategori berdiri sendiri
         $request->validate([
-            'name' => 'required|string|max:255',
-            'product_id' => 'required|exists:products,id',
+            'name' => 'required|string|max:255|unique:kategoris,name',
         ]);
 
         Kategori::create([
             'name' => $request->name,
-            'product_id' => $request->product_id,
         ]);
 
         return redirect()->route('kategori.index')->with('success', 'Kategori berhasil ditambahkan!');
@@ -44,23 +45,26 @@ class KategoriController extends Controller
     public function edit($id)
     {
         $kategori = Kategori::findOrFail($id);
-        $products = Product::all();
-        return view('kategori.edit', compact('kategori', 'products'));
+        // Cukup kirim kategori saja
+        return view('kategori.edit', compact('kategori'));
     }
 
     public function update(Request $request, $id)
     {
+        // 1. Hapus validasi product_id karena kategori sekarang berdiri sendiri
         $request->validate([
-            'name' => 'required|string|max:255',
-            'product_id' => 'required|exists:products,id',
+            'name' => 'required|string|max:255|unique:kategoris,name,' . $id,
         ]);
 
+        // 2. Cari data kategori
         $kategori = Kategori::findOrFail($id);
+
+        // 3. Update hanya kolom name saja
         $kategori->update([
             'name' => $request->name,
-            'product_id' => $request->product_id,
         ]);
 
+        // 4. Redirect dengan pesan sukses
         return redirect()->route('kategori.index')->with('success', 'Kategori berhasil diupdate!');
     }
 

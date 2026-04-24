@@ -8,20 +8,15 @@ class Product extends Model
 {
     public $timestamps = true;
 
-    protected $fillable = [
-        'user_id',
-        'name',
-        'quantity',
-        'price'
-    ];
+    protected $fillable = ['user_id', 'category_id', 'name', 'quantity', 'price'];
 
     public function user()
     {
         return $this->belongsTo(User::class);
     }
 
-    public function kategoris()
+    public function kategori()
     {
-        return $this->hasMany(Kategori::class);
+        return $this->belongsTo(Kategori::class, 'category_id');
     }
 }

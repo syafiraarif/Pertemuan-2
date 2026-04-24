@@ -5,9 +5,15 @@
                 <div class="p-6 text-gray-900 dark:text-gray-100">
 
                     {{-- Header --}}
-                    <div class="mb-6">
-                        <h2 class="text-2xl font-bold text-gray-800 dark:text-gray-100 tracking-tight">Kategori List</h2>
-                        <p class="text-sm text-gray-500 dark:text-gray-400 mt-1">Daftar data kategori produk Anda</p>
+                    <div class="mb-6 flex justify-between items-center">
+                        <div>
+                            <h2 class="text-2xl font-bold text-gray-800 dark:text-gray-100 tracking-tight">Kategori List</h2>
+                            <p class="text-sm text-gray-500 dark:text-gray-400 mt-1">Daftar data kategori produk Anda</p>
+                        </div>
+                        {{-- Tombol Tambah --}}
+                        <a href="{{ route('kategori.create') }}" class="px-4 py-2 bg-indigo-600 hover:bg-indigo-700 text-white text-sm font-semibold rounded-lg transition">
+                            + Add Category
+                        </a>
                     </div>
 
                     {{-- Flash Message --}}
@@ -23,13 +29,14 @@
                     {{-- Table --}}
                     <div class="overflow-x-auto rounded-lg border border-gray-200 dark:border-gray-700">
                         <table class="min-w-full divide-y divide-gray-200 dark:divide-gray-700 text-sm">
-                            <thead class="bg-gray-50 dark:bg-gray-700/50">
-                                <tr>
-                                    <th class="px-6 py-4 text-left text-xs font-bold text-gray-500 dark:text-gray-300 uppercase tracking-wider w-8">#</th>
-                                    <th class="px-6 py-4 text-left text-xs font-bold text-gray-500 dark:text-gray-300 uppercase tracking-wider">Nama Kategori</th>
-                                    <th class="px-6 py-4 text-left text-xs font-bold text-gray-500 dark:text-gray-300 uppercase tracking-wider">Terkait Produk</th>
-                                </tr>
-                            </thead>
+                                <thead class="bg-gray-50 dark:bg-gray-700/50">
+                                    <tr>
+                                        <th class="px-6 py-4 text-left text-xs font-bold text-gray-500 dark:text-gray-300 uppercase tracking-wider w-8">#</th>
+                                        <th class="px-6 py-4 text-left text-xs font-bold text-gray-500 dark:text-gray-300 uppercase tracking-wider">Nama Kategori</th>
+                                        <th class="px-6 py-4 text-left text-xs font-bold text-gray-500 dark:text-gray-300 uppercase tracking-wider">Terkait Produk</th>
+                                        <th class="px-6 py-4 text-right text-xs font-bold text-gray-500 dark:text-gray-300 uppercase tracking-wider">Aksi</th>
+                                    </tr>
+                                </thead>
                             <tbody class="bg-white dark:bg-gray-800 divide-y divide-gray-100 dark:divide-gray-700">
                                 @forelse ($kategoris as $kategori)
                                     <tr class="hover:bg-gray-50 dark:hover:bg-gray-700/50 transition duration-150 ease-in-out">
@@ -39,10 +46,18 @@
                                         <td class="px-6 py-4 text-gray-800 dark:text-gray-200 font-semibold">
                                             {{ $kategori->name }}
                                         </td>
-                                        <td class="px-6 py-4">
-                                            <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-blue-100 text-blue-800 dark:bg-blue-900/40 dark:text-blue-300">
-                                                {{ $kategori->product->name ?? 'Tidak ada' }}
-                                            </span>
+                                            <td class="px-6 py-4">
+                                                {{ $kategori->products->count() }}
+                                            </td>
+                                        <td class="px-6 py-4 text-right space-x-2">
+                                            <a href="{{ route('kategori.edit', $kategori) }}" class="text-indigo-600 hover:text-indigo-900 dark:text-indigo-400 dark:hover:text-indigo-300 font-medium">Edit</a>
+                                            <form action="{{ route('kategori.destroy', $kategori) }}" method="POST" class="inline">
+                                                @csrf
+                                                @method('DELETE')
+                                                <button type="submit" class="text-red-600 hover:text-red-900 dark:text-red-400 dark:hover:text-red-300 font-medium" onclick="return confirm('Yakin ingin menghapus?')">
+                                                    Delete
+                                                </button>
+                                            </form>
                                         </td>
                                     </tr>
                                 @empty

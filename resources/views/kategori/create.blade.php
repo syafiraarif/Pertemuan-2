@@ -26,17 +26,6 @@
                             @error('name') <span class="text-red-500 text-xs mt-1 block">{{ $message }}</span> @enderror
                         </div>
 
-                        <div>
-                            <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Hubungkan ke Produk <span class="text-red-500">*</span></label>
-                            <select name="product_id" class="w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 dark:bg-gray-900 dark:border-gray-600 dark:text-white transition" required>
-                                <option value="">-- Pilih Produk Terkait --</option>
-                                @foreach($products as $product)
-                                    <option value="{{ $product->id }}" {{ old('product_id') == $product->id ? 'selected' : '' }}>{{ $product->name }}</option>
-                                @endforeach
-                            </select>
-                            @error('product_id') <span class="text-red-500 text-xs mt-1 block">{{ $message }}</span> @enderror
-                        </div>
-
                         {{-- Action Buttons diletakkan di kanan --}}
                         <div class="flex items-center justify-end gap-3 pt-4">
                             <a href="{{ route('kategori.index') }}" class="px-4 py-2 bg-gray-200 text-gray-800 hover:bg-gray-300 dark:bg-gray-700 dark:text-gray-300 dark:hover:bg-gray-600 rounded-md text-sm font-semibold transition">
