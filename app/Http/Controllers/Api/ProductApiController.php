@@ -36,7 +36,7 @@ class ProductApiController extends Controller
             $validated = $request->validate([
                 'name' => 'required|string',
                 'price' => 'required|numeric',
-                // Ubah dari 'kategori_id' menjadi 'category_id'
+                'quantity' => 'required|integer',
                 'category_id' => 'required|exists:kategoris,id', 
             ]);
 
@@ -91,10 +91,10 @@ public function update(Request $request, int $id)
             $validated = $request->validate([
                 'name' => 'required|string',
                 'price' => 'required|numeric',
-                // Ubah dari 'kategori_id' menjadi 'category_id'
+                'quantity' => 'required|integer',
                 'category_id' => 'required|exists:kategoris,id', 
             ]);
-            
+                        
             $product->update($validated);
 
             return response()->json([

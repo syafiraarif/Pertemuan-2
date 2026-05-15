@@ -63,3 +63,22 @@
 | Tampilan Button Add | Tampilan Button Update & Delete | 
 |---------|------|
 | ![4](ss/pertemuan7/tampilanButtonTambah.png) | ![5](ss/pertemuan7/tampilanButtonEdit&Delete.png) | 
+
+
+## Pertemuan 9
+
+| Login | Tambah Kategori | Update Kategori |
+|---------|------|-----------|
+| ![1](ss/pertemuan9/login.png) | ![2](ss/pertemuan9/postCategory.png) | ![3](ss/pertemuan9/putCategory.png) |
+
+| Tampilkan Semua Kategori | Tampilkan Kategori By ID | Delete Kategori |
+|---------|------|-----------|
+| ![4](ss/pertemuan9/getCategory.png) | ![5](ss/pertemuan9/getByIDCategory.png) | ![6](ss/pertemuan9/deleteCategory.png) |
+
+| Tampilkan Semua Product | Tampilkan Product By ID | Delete Product |
+|---------|------|-----------|
+| ![7](ss/pertemuan9/getProduct.png) | ![8](ss/pertemuan9/getByIDProduct.png) | ![9](ss/pertemuan9/deleteProduct.png) |
+
+| Tambah Product | Update Product | 
+|---------|------|
+| ![7](ss/pertemuan9/postProduct.png) | ![8](ss/pertemuan9/putProduct.png) |
